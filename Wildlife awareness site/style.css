@@ -1,0 +1,579 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.text-decoration-none{
+    text-decoration: none;
+}
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+header{
+    position: relative;
+    padding-left: 3em;
+    padding-right: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+}
+nav a{
+ padding: 8px 16px;
+}
+.logo i{
+    display: none;
+}
+header nav{
+    display: flex;
+    gap: 2em;
+}
+nav>a:hover{
+    background-color: #FDFAF6;
+}
+.endangered-species-box{
+    background-color: white;
+    transform-origin: top;
+    transition: transform 250ms 150ms;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: scale(0);
+    padding: 1em;
+    position: absolute;
+    top: 3.9em;
+    z-index: 1;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "box det"
+                          "bottom bottom";
+}
+.endangered-species-toggle:hover{
+    background-color: #FDFAF6;
+    border-radius: 5px;
+}
+.endangered-species-toggle:hover ~ .endangered-species-box,
+.endangered-species-box:hover {
+    transform: scale(1,1);
+}
+.endangered-species-box .box{
+    background-color: #16A34A;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    padding: 20px;
+    padding-top: 4em;
+}
+.endangered-species-box .box>a{
+    text-decoration: none;
+    color: white;
+}
+.endangered-species-box{
+    font-size: 0.875rem;
+}
+.det a{
+    margin-bottom: 2em;
+    text-decoration: none;
+    color: black;
+}
+.endangered-species-box p{
+    /* padding: 8px 16px; */
+}
+.endangered-species-box p:hover{
+    background-color: #FDFAF6;
+}
+.box:hover>a>p{
+    background-color: #16A34A;
+}
+.conservation-box{
+    z-index: 1;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    position: absolute;
+    top: 3.5em;
+    left: 30em;
+    padding: 1em;
+    transform: scale(0);
+    transform-origin: top;
+    transition: transform 250ms 150ms;
+}
+.conservation-toggle:hover{
+    background-color: #FDFAF6;
+    border-radius: 5px;
+}
+.conservation-toggle:hover ~ .conservation-box,
+.conservation-box:hover{
+    transform: scale(1,1);
+}
+.conservation-box>a{
+    margin-bottom:1em;
+    margin-top: 0.5em;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+.conservation-box p{
+    border-radius: 5px;
+    /* padding: 8px 16px; */
+}
+.conservation-box p:hover{
+    background-color: #FDFAF6;
+}
+.getInvolved-box{
+    z-index: 1;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    position: absolute;
+    top: 3.5em;
+    left: 40em;
+    padding: 1em;
+    transform: scale(0);
+    transform-origin: top;
+    transition: transform 250ms 150ms;
+}
+.getInvolved-toggle:hover{
+    background-color: #FDFAF6;
+    border-radius: 5px;
+}
+.getInvolved-toggle:hover ~ .getInvolved-box,
+.getInvolved-box:hover{
+    transform: scale(1,1);
+}
+.getInvolved-box>a{
+    margin-bottom:1em;
+    margin-top: 0.5em;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+.getInvolved-box p{
+    border-radius: 5px;
+    /* padding: 8px 16px; */
+}
+.getInvolved-box p:hover{
+    background-color: #FDFAF6;
+}
+header nav>a{
+    text-decoration: none;
+    color: black;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.side-nav{
+    position: absolute;
+    top: 4em;
+    background-color: white;
+    padding: 1rem;
+    left: 0;
+    display: none;
+}
+.side-nav a{
+    display: block;
+    text-decoration: none;
+    color: #71717a;
+    margin-top: 1em;
+}
+.right-nav{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.right-nav button{
+    background-color: #16A34A;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+.right-nav button>a{
+    text-decoration: none;
+    color: white;
+}
+.right-nav button:hover{
+    background-color: #0D4715;
+    transition: all 250ms;
+}
+@media (max-width:770px) {
+    header nav{
+        display: none;
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+    .logo i{
+        display: block;
+    }
+    .logo input:checked ~ .side-nav{
+        display: block;
+    }
+}
+
+/* SECTION 1 */
+.section1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+    background-image: url(images/vecteezy_ai-generated-giraffe-standing-in-the-african-savannah_39598313.jpg);
+    background-size: cover;
+    background-color: #333;
+    background-blend-mode: overlay;
+}
+.section1 .buttons>button{
+    background-color: #16A34A;
+    font-size: 0.875rem;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 5px;
+    margin: 1em;
+}
+.section1 .buttons .donate-now:hover{
+    background-color: #0D4715;
+    transition: all 150ms;
+}
+.wildlife-news{
+    background-color: #166534;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    line-height: 3.3rem;
+    padding-left: 2rem;
+}
+
+/* SECTION 2 */
+.section2{
+    background-color: #FAFAF9;
+}
+.species-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    
+}
+.sumatran-tiger{
+    
+    width: 28em;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* padding: 1.25rem; */
+}
+.sumatran-tiger p{
+    margin: 0.8rem;
+    font-size: 0.875rem;
+}
+.sumatran-tiger .tiger-img{
+    position: relative;
+    background-image: url(images/sumatran-tiger-bs-bengal-tiger.webp);
+    background-size: cover;
+    height: 15em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.mountain-gorilla .gorilla-img{
+    position: relative;
+    background-image: url(images/mountain-gorilla.jpg);
+    background-size: cover;
+    height: 15em;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.vaquita-porpoise .vaquita-img{
+    position: relative;
+    background-image: url(images/vaquita-porpoise.webp  );
+    background-size: cover;
+    height: 15em;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.utility{
+    position: absolute; 
+    bottom: 10px;
+    left: 10px; 
+    font-size: 0.75rem; 
+    background-color: red;
+    border-radius: 2em;
+    padding: 4px 8px; 
+    color: white;
+}
+.view-all-endangered{
+    padding: 12px 24px;
+    font-size: 0.875rem;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin: 4em;
+}
+.view-all-endangered:hover{
+    cursor: pointer;
+}
+
+/* SECTION 3 */
+.map-img{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: min-content;
+      margin: auto;
+      padding: 2rem;
+      border-radius: 10px;
+}
+
+/* SECTION 4 */
+.section4{
+    background-color: #F0FDF4;
+}
+.stories{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.bald-eagle,.giant-panda{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    padding-bottom: 2rem;
+    border-radius: 5px;
+}
+.bald-eagle .eagle-img{
+    background-color: white;
+    background-image: url(images/bald-eagle.webp);
+    background-size: cover;
+    background-position: center;
+    height: 20em;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.giant-panda .panda-img{
+    background-image: url(images/giant-panda.avif);
+    background-size: cover;
+    background-position: center;
+    height: 20em;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.bald-eagle a:hover,.giant-panda>a:hover{
+    background-color: #F4F4F5;
+}
+.bald-eagle>a, .giant-panda>a{
+    color: black;
+    margin: 1rem;
+    border: 1px solid rgb(113, 113, 122,0.3);
+    border-radius: 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: white;
+    font-size: 0.875rem;
+}
+
+/* SECTOIN 5 */
+.section5{
+    background-color: #FAFAF9;
+}
+.blogs{
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+.blogs p:hover{
+    color: #16A34A;
+}
+.blogs p{
+        margin: 0.8rem;
+        font-size: 0.875rem;
+}
+.frogs,.climate-change,.interview{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+}
+.frogs .frog-img{
+    background-image: url(images/frot.jpg);
+    background-size: cover;
+    height: 15em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.climate-change .bear-img{
+    background-image: url(images/polarbear.jpg);
+    background-size: cover;
+    height: 15em;
+    border-top-left-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-top-right-radius: 10px;
+}
+.interview .interview-img{
+    background-image: url(images/interview.jpg);
+    background-size: cover;
+    height: 15em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* SECTION 6 */
+.section6{
+    background-color: #15803D;
+    color: white;
+}
+.section6 .buttons>button{
+    background-color: #FAF1E6;
+    font-size: 0.875rem;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 5px;
+    margin: 1em;
+}
+
+/* FOOTER */
+footer{
+    background-color: #1C1917;
+}
+.upper-footer{
+    flex-wrap: wrap;
+    display: flex;
+    color: #A8A29E;
+    justify-content: space-between;
+    padding: 2.125rem;
+    padding-top: 4em;
+    gap: 1em;
+}
+.quick-links a{
+    display: block;
+    color: #A8A29E;
+    text-decoration: none;
+    margin-top: .8em;
+}
+.lower-footer{
+    padding: 1.125rem;
+    display: flex;
+    justify-content: space-between;
+    color: #A8A29E;;
+    font-size: 0.875rem;
+}
+.lower-footer .det{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+.lower-footer .det>a{
+    color: #A8A29E;
+    text-decoration: none;
+    color: #A8A29E;
+    gap: 1em;
+    font-size: 0.875rem;
+}
+.donate-section1{
+    /* background-image: url(images/vecteezy_ai-generated-giraffe-standing-in-the-african-savannah_39598313.jpg); */
+    background-color: #BF3131;
+    /* background-blend-mode: overlay; */
+    height: 50vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* SECTION 2 */
+.donate-section2{
+    display: flex;
+    gap: 1em;
+}
+.donation-box{
+    padding: 1em;
+}
+.donation-box p{
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+.donation-duration{
+    background-color: red;
+}
+.make-donation,.your-impact{
+    padding: 2em
+}
+.designation label{
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.donation-impact{
+    background-color: #f0fdf4;
+    padding: 1em 1.5em;
+    border-radius: 12px;
+}
+.other-ways,.commitment{
+    border: 1px solid #eaeaea;
+    padding: 1em;
+    border-radius: 10px;
+    margin-top: 1.5em;
+}
+.other-ways div{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.other-ways div i{
+    border-radius: 50%;
+    padding: 1em;
+    background-color: #dcfce7;
+
+}
+.commitment p{
+    padding: 1em 1em 0px 0px
+}
+
+/* SECTION 3 DONATION */
+.donation-section3{
+    padding-top: 1em;
+    padding-bottom: 3rem;
+}
+.reviews{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+   
+}
+.reviews>div{
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.reviews div>div{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1em
+
+}
+.reviews div>div>i{
+    background-color: #eaeaea;
+    border-radius: 50%;
+    padding: 1.5em;
+}
+
+/* SECTION 4 */
+.donation-section4{
+    text-align: center;
+    padding-top: 4rem;
+    background-color: #15803d;
+    color: white;
+    padding-bottom: 4rem
+}
+.donation-section4 button{
+    padding: 14px 32px;
+    border-radius: 5px;
+    border: none;
+}
